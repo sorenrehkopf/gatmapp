@@ -1,7 +1,7 @@
 body{
 	background: radial-gradient(circle farthest-corner at center,rgba(220, 260, 25, 1),rgba(220, 260, 25, 1),rgba(220, 260, 25, 1),rgba(220, 260, 25, .3));
-	height:100%;
-	display:flex;
+	background-position:absolute;
+	min-height: 100%;
 }
 
 #login {
@@ -15,9 +15,15 @@ body{
 	border-radius: 100%;
 	text-align: center;
 }
-#logo{
+.logo{
 	margin-top: -4%;
 	font-size: 100px;
+	font-family: Passion One;
+}
+.seshLogo{
+	margin-left: 23%;
+	margin-top: 0%;
+	font-size: 150px;
 	font-family: Passion One;
 }
 #login_form{
@@ -31,5 +37,37 @@ body{
 	margin-left: -15%;
 	background-color: rgba(0,0,0,.75);
 	color:white;
-	flex:1;
+	height: 100vh;
+}
+#mainView{
+/*	background-color: rgba(0,0,0,.3);*/
+	height:100vh;
+	margin-right:-12.5%;
+}
+#gifSearch{
+	font-family:Titillium Web;
+	margin-top:27%;
+	margin-left: 33%;
+	position:center;
+}
+#gifSearchField{
+	display:inline;
+	width:40%;
+}
+#resultsView{
+	display:none;
+	overflow:auto;
+	max-height:calc(100vh - 125px);
+}
+#resultsView::-webkit-scrollbar{
+	background-color: rgba(20,20,20,0);
+	width:5px;
+}
+#resultsView::-webkit-scrollbar-thumb{
+	background-color: rgba(20,20,20,.4);
+	width:5px;
+}
+#searchResults img{
+	height:330px;
+	width:33%;
 }

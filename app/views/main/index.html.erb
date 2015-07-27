@@ -1,19 +1,19 @@
 <div id='login' class="col-sm-4 col-sm-offset-4">
-<div id="logo">
+<div class="logo">
 g@
 </div>
 <div id="login_form">
 <%= bootstrap_form_for :user do |u| %>
 	<%= u.text_field :email, placeholder: "E-mail." %>
 	<%= u.text_field :password, placeholder: "Password." %>
-	<%= u.submit "Login." %> 
-	<button type="button" class='btn btn-default' data-toggle="modal" data-target="#signUp">
+	<%= u.primary "Login." %> 
+	<button type="button" class='btn btn-primary' data-toggle="modal" data-target="#signUp">
 	Sign Up!
 	</button>
 <% end %>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="signUp" tabindex="1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -28,7 +28,7 @@ g@
 			<% end %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default">g@ me!</button>
+        <button type="button" class="btn btn-primary">g@ me!</button>
       </div>
     </div>
   </div>
