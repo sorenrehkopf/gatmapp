@@ -1,0 +1,35 @@
+body{
+	background: radial-gradient(circle farthest-corner at center,rgba(220, 260, 25, 1),rgba(220, 260, 25, 1),rgba(220, 260, 25, 1),rgba(220, 260, 25, .3));
+	height:100%;
+	display:flex;
+}
+
+#login {
+	position:center;
+	color:white;
+	height:380px;
+	width:;
+	margin-top: 15%;
+	background-color: rgba(0,0,0,.75);
+	border:3px dotted white;
+	border-radius: 100%;
+	text-align: center;
+}
+#logo{
+	margin-top: -4%;
+	font-size: 100px;
+	font-family: Passion One;
+}
+#login_form{
+	padding:10px;
+}
+#signUp{
+	color:black;
+	text-align: center;
+}
+#sidebar{
+	margin-left: -15%;
+	background-color: rgba(0,0,0,.75);
+	color:white;
+	flex:1;
+}
