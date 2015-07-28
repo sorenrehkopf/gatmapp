@@ -4,7 +4,15 @@ Rails.application.routes.draw do
 
   root 'main#index'
 
+  post 'signup' => 'users#create'
+
+  post 'login' => 'main#create'
+
+  get 'logout' => 'sessions#destroy'
+
   resources :sessions
+
+  resources :users
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

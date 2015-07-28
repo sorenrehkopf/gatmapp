@@ -1,18 +1,22 @@
 <div class="col-sm-4 pull-left" id="sidebar">
-<div class="seshLogo">
-g@
-</div>
+	<div class="seshLogo">
+		g@
+	</div>
+	<div>
+		<%= link_to "Log-out.", logout_path %>
+	</div>
 </div>
 <div class="col-sm-11 pull-right" id="mainView">
-<div id="gifSearch">
-<h2>Search for Gifs!</h2>
-<form class="form-group">
-<input type="text" class="form-control" id="gifSearchField" placeholder="What do you want to find?">
-<button type="submit" class="btn btn-primary" id="srchBtn">Search!</button>
-</form>
-</div>
-<div id="resultsView">
-<div id="searchResults">
-</div>
-</div>
+	<div id="gifSearch">
+		<h2>Search for Gifs!</h2>
+		<form class="form-group">
+			<input type="text" class="form-control" id="gifSearchField" 
+			placeholder="What do you want to find?">
+			<button type="submit" class="btn btn-primary" id="srchBtn">Search!</button>
+		</form>
+	</div>
+	<div id="resultsView">
+		<div id="searchResults">
+		</div>
+	</div>
 </div>	

@@ -22,7 +22,7 @@ body{
 }
 .seshLogo{
 	margin-left: 23%;
-	margin-top: 0%;
+	margin-top: -5%;
 	font-size: 150px;
 	font-family: Passion One;
 }
@@ -68,6 +68,6 @@ body{
 	width:5px;
 }
 #searchResults img{
-	height:330px;
+	height:300px;
 	width:33%;
 }

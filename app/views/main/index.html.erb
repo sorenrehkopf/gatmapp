@@ -3,9 +3,9 @@
 g@
 </div>
 <div id="login_form">
-<%= bootstrap_form_for :user do |u| %>
+<%= bootstrap_form_for :user, url: login_path do |u| %>
 	<%= u.text_field :email, placeholder: "E-mail." %>
-	<%= u.text_field :password, placeholder: "Password." %>
+	<%= u.password_field :password, placeholder: "Password." %>
 	<%= u.primary "Login." %> 
 	<button type="button" class='btn btn-primary' data-toggle="modal" data-target="#signUp">
 	Sign Up!
@@ -21,14 +21,15 @@ g@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
-      	<%= bootstrap_form_for :user do |n| %>
-      		<%= n.text_field :name, placeholder: "Name." %> 
-			<%= n.text_field :email, placeholder: "E-mail." %>
-			<%= n.text_field :password, placeholder: "Password." %>
-			<% end %>
+      	<%= bootstrap_form_for @user, url: signup_path do |n| %>
+      		<%= n.text_field :name, placeholder: "Desired user-name." %> 
+    			<%= n.text_field :email, placeholder: "E-mail." %>
+    			<%= n.password_field :password, placeholder: "Password." %>
+          <%= n.password_field :password_confirmation, placeholder:"Re-type password." %> 
+          <div class="modal-footer">
+          <%= n.primary "g@ me!" %>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">g@ me!</button>
+			<% end %>
       </div>
     </div>
   </div>
