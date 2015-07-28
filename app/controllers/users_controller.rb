@@ -6,19 +6,16 @@ class UsersController < ApplicationController
 
 	def create
 	@user = User.create user_params
-		if @user.persisted?
+
 		  flash[:success] = "You are signed up, you may now log in."
 		  redirect_to root_path
-		else
-		  flash[:danger] = @user.errors.full_messages.uniq.to_sentence
-		  render :new
-		end
+
 	end
 
 	private
 
 	def user_params
-	params.require(:user).permit(:email,:name,:password)
+	params.require(:user).permit(:user_name,:picture,:email,:password,:password_confirmation)
 	end
 
 

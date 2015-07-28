@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
  	uniqueness: {case_sensitive: false},
  	format: {with: /@/}
 
- 	validates :name,
+ 	validates :user_name,
  	uniqueness: {case_sensitive: false}
 
  	def self.authenticate email, password

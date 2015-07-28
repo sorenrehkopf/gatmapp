@@ -22,7 +22,8 @@ g@
       </div>
       <div class="modal-body">
       	<%= bootstrap_form_for @user, url: signup_path do |n| %>
-      		<%= n.text_field :name, placeholder: "Desired user-name." %> 
+      		<%= n.text_field :user_name, placeholder: "Desired user-name." %> 
+          <%= n.file_field :picture %>
     			<%= n.text_field :email, placeholder: "E-mail." %>
     			<%= n.password_field :password, placeholder: "Password." %>
           <%= n.password_field :password_confirmation, placeholder:"Re-type password." %> 
