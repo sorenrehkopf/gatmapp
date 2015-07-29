@@ -27,6 +27,7 @@ gem 'bootstrap_form'
 gem 'bcrypt', '~> 3.1.7'
 gem 'cloudinary'
 
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

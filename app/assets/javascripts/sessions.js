@@ -10,12 +10,14 @@ $(function(){
 			offset+=25;
 			console.log(giphs);
 			for(i=0;i<giphs.data.length;i++){
-				$('#searchResults').append('<img src='+giphs.data[i].images.original.url+'>');
+				// $('#searchResults').append('<a href="/gifs/'+giphs.data[i].id+'"><img src='+giphs.data[i].images.original.url+'></a>');
+				$('#searchResults').append('<div class="imageDiv" src="'+giphs.data[i].images.original.url+'" style="background-image: url('+giphs.data[i].images.original.url+');"><span class="glyphicon glyphicon-plus js-save"></span><span class="glyphicon glyphicon-resize-full js-full"></span></div>' );
 			};
 		});
 		$('#gifSearch').animate({'margin-top':'0%'},1000,function(){
-			$('#resultsView').fadeIn(2000);
-			var more=true
+			$('#resultsView').fadeIn(1500);
+			$('#mainView').addClass('dimmed');
+			var more=true;
 			$('#resultsView').on('scroll',function(){
 				if($('#resultsView').scrollTop() + $('#resultsView').height() > $('#searchResults').height()-100 && more) {
 				more=false
@@ -24,7 +26,7 @@ $(function(){
 					$.get(url,data,function(giphs1){
 						console.log(giphs1);
 						for(i=0;i<giphs1.data.length;i++){
-							$('#searchResults').append('<img src='+giphs1.data[i].images.original.url+'>');
+							$('#searchResults').append('<div class="imageDiv" src="'+giphs.data[i].images.original.url+'" style="background-image: url('+giphs.data[i].images.original.url+');"></div>' );
 						};
 						more = true
 					});
@@ -34,6 +36,28 @@ $(function(){
 
 	});
 
+	$("#searchResults").on('mouseover','div',function(){
+		$(this).children().show();
+	});
+
+	$("#searchResults").on('mouseout','div',function(){
+		$(this).children().hide();
+	});
+
+	$("#searchResults").on('click','div',function(){
+		// e.preventDefault()
+		// console.log($(this).attr('src'))
+		// var imgSrc = $(this).attr('src');
+		// $.ajax({
+		// 	url:'/gifs',
+		// 	method: 'POST',
+		// 	data: {'url': imgSrc}
+		// }).done(function(){
+
+		// }).error(function(err){
+		// 	console.log(err)
+		// });
+	});
 
 
 });

@@ -1,13 +1,33 @@
-<div class="col-sm-4 pull-left" id="sidebar">
+<div class="col-sm-3 pull-left" id="sidebar">
 	<div class="seshLogo">
 		g@
 	</div>
+	<hr>
 	<div id="userInfo">
-		<%= @user.user_name %>
-		<%= link_to "Log-out.", logout_path %>
+		<div id='userPic'>
+			<%= cl_image_tag(@user.picture, :width => 100, :height => 100, :crop => :fill) %>
+		</div>
+		<div id='userText'>
+			<h3><%= @user.user_name %></h3>
+			<ul class="nav nav-pills">
+			  <li role="presentation"><a href="#">Feed.</a></li>
+			  <li role="presentation"><a href="#">Collection.</a></li>
+			  <li role="presentation"><a href="#">Search.</a></li>
+			</ul>
+			<h6><%= link_to "Log-out.", logout_path %></h6>
+		</div>	
+	</div>
+	<hr>
+	<div id="userSearch">
+		<form class="form-group">
+			<input type="text" class="form-control" id="userSearchField" 
+			placeholder="Search for users by user-name.">
+			<button type="submit" class="btn btn-primary" id="userSrchBtn">
+			<span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+		</form>
 	</div>
 </div>
-<div class="col-sm-11 pull-right" id="mainView">
+<div class="col-sm-9 pull-right" id="mainView">
 	<div id="gifSearch">
 		<h2>Search for Gifs!</h2>
 		<form class="form-group">
