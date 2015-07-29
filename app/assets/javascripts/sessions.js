@@ -44,19 +44,19 @@ $(function(){
 		$(this).children().animate({opacity:'0.0'},0);
 	});
 
-	$("#searchResults").on('click','div',function(){
-		// e.preventDefault()
-		// console.log($(this).attr('src'))
-		// var imgSrc = $(this).attr('src');
-		// $.ajax({
-		// 	url:'/gifs',
-		// 	method: 'POST',
-		// 	data: {'url': imgSrc}
-		// }).done(function(){
-
-		// }).error(function(err){
-		// 	console.log(err)
-		// });
+	$("#searchResults").on('click','div',function(e){
+		e.preventDefault()
+		// console.log($(this).attr('imgurl'))
+		var imgSrc = $(this).attr('imgurl');
+		$.ajax({
+			url:'/gifs',
+			method: 'POST',
+			data: {'url': imgSrc}
+		}).done(function(){
+			console.log(imgSrc)
+		}).error(function(err){
+			console.log(err)
+		});
 	});
 
 

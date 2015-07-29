@@ -12,7 +12,11 @@ class GifsController < ApplicationController
 	end
 
 	def create
-		@gif=Gif.new(params[:url][:imgSrc])
+		@user = current_user
+		@gif = @user.gifs.create(url: params[:url])
+		respond_to do |format|
+   		format.json { head :ok }
+ end
 	end
 
 	def show
