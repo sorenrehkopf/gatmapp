@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
  	validates :user_name,
  	uniqueness: {case_sensitive: false}
 
+ 	has_many :gifs
+
  	def self.authenticate email, password
 		User.find_by_email(email).try(:authenticate, password)
 	end
