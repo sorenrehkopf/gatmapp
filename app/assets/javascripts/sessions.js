@@ -11,7 +11,7 @@ $(function(){
 			console.log(giphs);
 			for(i=0;i<giphs.data.length;i++){
 				// $('#searchResults').append('<a href="/gifs/'+giphs.data[i].id+'"><img src='+giphs.data[i].images.original.url+'></a>');
-				$('#searchResults').append('<div class="imageDiv" src="'+giphs.data[i].images.original.url+'" style="background-image: url('+giphs.data[i].images.original.url+');"><span class="glyphicon glyphicon-plus js-save"></span><span class="glyphicon glyphicon-resize-full js-full"></span></div>' );
+				$('#searchResults').append('<div class="imageDiv" imgurl="'+giphs.data[i].images.original.url+'" style="background-image: url('+giphs.data[i].images.original.url+');"><img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/add-128.png"><img src="https://cdn4.iconfinder.com/data/icons/geomicons/32/672382-expand-128.png"></div>' );
 			};
 		});
 		$('#gifSearch').animate({'margin-top':'0%'},1000,function(){
@@ -26,7 +26,7 @@ $(function(){
 					$.get(url,data,function(giphs1){
 						console.log(giphs1);
 						for(i=0;i<giphs1.data.length;i++){
-							$('#searchResults').append('<div class="imageDiv" src="'+giphs.data[i].images.original.url+'" style="background-image: url('+giphs.data[i].images.original.url+');"></div>' );
+							$('#searchResults').append('<div class="imageDiv" imgurl="'+giphs1.data[i].images.original.url+'" style="background-image: url('+giphs1.data[i].images.original.url+');"><img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/add-128.png"><img src="https://cdn4.iconfinder.com/data/icons/geomicons/32/672382-expand-128.png"></div>' );
 						};
 						more = true
 					});
@@ -37,11 +37,11 @@ $(function(){
 	});
 
 	$("#searchResults").on('mouseover','div',function(){
-		$(this).children().show();
+		$(this).children().animate({opacity:'0.7'},0);
 	});
 
 	$("#searchResults").on('mouseout','div',function(){
-		$(this).children().hide();
+		$(this).children().animate({opacity:'0.0'},0);
 	});
 
 	$("#searchResults").on('click','div',function(){

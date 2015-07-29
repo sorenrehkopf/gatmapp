@@ -82,16 +82,15 @@ hr{
 	width:6px;
 }
 .imageDiv{
-	position:absolute;
 	height:270px;
 	width:33%;
 	display:inline-block;
 }
-#searchResults span{
-	display:none;
-	position:relative;
-	height:70px;
-/*	opacity:0.5;*/
+#searchResults img{
+	height:17.5%;
+	overflow:hidden;
+	bottom:5%;
+	opacity:0;
 }
 #userInfo h3{
 	text-decoration: underline;
