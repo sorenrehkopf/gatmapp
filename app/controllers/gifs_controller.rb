@@ -1,5 +1,12 @@
 class GifsController < ApplicationController
 
+	before_action :current_user
+
+	def collection
+		@user = current_user
+		@users = User.all
+	end
+
 	def new
 		@gif = Gif.new
 	end

@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+	before_action :current_user
+
 	def new
     @user = User.new
 	end
@@ -20,6 +22,12 @@ class UsersController < ApplicationController
 		  flash[:success] = "You are signed up, you may now log in."
 		  redirect_to root_path
 
+	end
+
+	def show
+		@user = current_user
+		@user_show = User.find (params[:id])
+		@users = User.all
 	end
 
 	private

@@ -48,7 +48,7 @@ body{
 	color:white;
 	height: 100vh;
 }
-hr{
+#sidebar hr{
 	margin:-3px 0px 3px 3px;
 }
 #mainView{
@@ -118,4 +118,20 @@ hr{
 #userSearchField{
 	display:inline;
 	width:87%;
+}
+#userShowInfo h1{
+	display:inline;
+	vertical-align: bottom;
+}
+#userShowInfo hr{
+	margin-top: 5px;
+	margin-bottom: 8px;
+}
+#userCollInfo h1{
+	display:inline;
+	vertical-align: bottom;
+}
+#userCollInfo hr{
+	margin-top: 5px;
+	margin-bottom: 8px;
 }

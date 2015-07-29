@@ -12,11 +12,15 @@ Rails.application.routes.draw do
 
   get 'logout' => 'sessions#destroy'
 
+  get 'collection' => 'gifs#collection'
+
   resources :sessions
 
   resources :users
 
   resources :gifs
+
+  resources :friendships
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

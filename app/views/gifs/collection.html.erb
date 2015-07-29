@@ -1,0 +1,70 @@
+<div class="col-sm-3 pull-left" id="sidebar">
+	<div class="seshLogo">
+		g@
+	</div>
+	<hr>
+	<div id="userInfo">
+		<div id='userPic'>
+			<%= cl_image_tag(@user.picture, :width => 100, :height => 100, :crop => :fill) %>
+		</div>
+		<div id='userText'>
+			<h3><%= @user.user_name %></h3>
+			<ul class="nav nav-pills">
+			  <li role="presentation"><a href="#">Feed.</a></li>
+			  <li role="presentation"><%= link_to "Collection.", collection_path %></li>
+			  <li role="presentation"><%= link_to "Search.", sessions_path %></li>
+			</ul>
+			<h6><%= link_to "Log-out.", logout_path %></h6>
+		</div>	
+	</div>
+	<hr>
+	<div id="userSearch">
+		<form class="form-group">
+			<input type="text" class="form-control" id="userSearchField" 
+			placeholder="Search for users by user-name.">
+			<button type="submit" class="btn btn-primary" id="userSrchBtn">
+			<span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+		</form>
+	</div>
+	<div id="friendSearch">
+		<% for user in @users %>
+			<div class="user">
+				<p>
+				 <strong><%=h user.user_name %></strong>
+				 <%= link_to "Follow.", friendships_path(:friend_id => user), :method => :post %>
+				 <div class="clear"></div>
+				</p>
+			</div> 
+		<% end %>
+	</div>
+	<div id="following">
+		<h3>Following.</h3>
+		<ul>
+			<% for friendship in @user.friendships %>
+				<li><%= friendship.friend.user_name %> (<%= link_to "Remove.", friendship, :method => :delete %>)</li>
+			<% end %>
+		</ul>
+	</div>
+	<div id="followers">
+		<h3>Followers</h3>
+		<ul>
+			<% for friendship in @user.inverse_friends %>
+				<li><%=h user.user_name %></li>
+			<% end %>
+		</ul>
+	</div>
+</div>
+<div class="col-sm-9 pull-right" id="mainView">
+	<div id="userCollInfo">
+		<%= cl_image_tag(@user.picture, :width => 140, :height => 140, :crop => :fill) %>
+		<h1><%= @user.user_name %></h1>
+		<hr>
+	</div>
+	<div id="collectionView">
+			<% @current_user.gifs.each do |gif| %>
+				<div>
+					<img src="<%= gif.url %>">
+				</div>
+			<% end %>
+	</div>
+</div>	
