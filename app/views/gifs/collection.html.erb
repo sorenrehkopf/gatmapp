@@ -10,7 +10,7 @@
 		<div id='userText'>
 			<h3><%= @user.user_name %></h3>
 			<ul class="nav nav-pills">
-			  <li role="presentation"><a href="#">Feed.</a></li>
+			  <li role="presentation"><%= link_to "Feed.", feed_path %></li>
 			  <li role="presentation"><%= link_to "Collection.", collection_path %></li>
 			  <li role="presentation"><%= link_to "Search.", sessions_path %></li>
 			</ul>
@@ -41,7 +41,8 @@
 		<h3>Following.</h3>
 		<ul>
 			<% for friendship in @user.friendships %>
-				<li><%= friendship.friend.user_name %> (<%= link_to "Remove.", friendship, :method => :delete %>)</li>
+				<li><%= friendship.friend.user_name %> (<%= link_to "Profile.", user %>)
+				(<%= link_to "Remove.", friendship, :method => :delete %>)</li>
 			<% end %>
 		</ul>
 	</div>
@@ -49,7 +50,7 @@
 		<h3>Followers</h3>
 		<ul>
 			<% for friendship in @user.inverse_friends %>
-				<li><%=h user.user_name %></li>
+				<li><%=h friendship.user_name %></li>
 			<% end %>
 		</ul>
 	</div>

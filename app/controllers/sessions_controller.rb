@@ -12,6 +12,11 @@ class SessionsController < ApplicationController
 		@users = User.all
 	end
 
+	def feed
+		@user = current_user
+		@users = User.all
+	end
+
 	def destroy
 	session[:user_id] = nil
 	flash[:info] = "You are logged out."

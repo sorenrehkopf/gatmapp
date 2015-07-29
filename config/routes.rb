@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post 'login' => 'main#create'
 
   get 'logout' => 'sessions#destroy'
+  get 'feed' => 'sessions#feed'
 
   get 'collection' => 'gifs#collection'
 

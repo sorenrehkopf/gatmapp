@@ -135,3 +135,15 @@ body{
 	margin-top: 5px;
 	margin-bottom: 8px;
 }
+#mainScroll{
+	overflow:auto;
+	max-height:calc(100vh - 125px);
+}
+#mainScroll::-webkit-scrollbar{
+	background-color: rgba(20,20,20,0);
+	width:6px;
+}
+#mainScroll::-webkit-scrollbar-thumb{
+	background-color: rgba(20,20,20,.4);
+	width:6px;
+}

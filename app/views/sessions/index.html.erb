@@ -10,7 +10,7 @@
 		<div id='userText'>
 			<h3><%= @user.user_name %></h3>
 			<ul class="nav nav-pills">
-			  <li role="presentation"><a href="#">Feed.</a></li>
+			  <li role="presentation"><%= link_to "Feed.", feed_path %></li>
 			  <li role="presentation"><%= link_to "Collection.", collection_path %></li>
 			  <li role="presentation"><%= link_to "Search.", sessions_path %></li>
 			</ul>
