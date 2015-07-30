@@ -22,13 +22,14 @@ class GifsController < ApplicationController
 	end
 
 	def show
-		@gif = Gif.create(url: params[:id])
-		redirect_to sessions_path
+		# @gif = Gif.create(url: params[:id])
+		# redirect_to sessions_path
 	end
 
 	def destroy
-		@gif.delete
-		redirect_to collection_path
+		gif = Gif.find(params[:id])
+		result=gif.delete
+		render :json => {result:result}
 	end
 
 

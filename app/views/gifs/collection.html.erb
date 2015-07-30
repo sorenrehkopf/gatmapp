@@ -10,7 +10,7 @@
 	<div class="mainScroll dimmed">
 		<div id="collectionView">
 			<% @current_user.gifs.each do |gif| %>
-			<div class="imageDiv" imgurl="<%= gif.url %>" style="background-image: url(<%= gif.url %>);"><img class="show" src="https://cdn4.iconfinder.com/data/icons/geomicons/32/672382-expand-128.png"><img class="delete" src="http://freeiconbox.com/icon/256/12960.png"><img class="post" src="https://d30y9cdsu7xlg0.cloudfront.net/png/1490-200.png"></div>
+			<div class="imageDiv" imgurl="<%= gif.url %>" imgId="<%= gif.id %>" style="background-image: url(<%= gif.url %>);"><img class="show" src="https://cdn4.iconfinder.com/data/icons/geomicons/32/672382-expand-128.png"><img class="delete" src="http://freeiconbox.com/icon/256/12960.png"><img class="post" src="https://d30y9cdsu7xlg0.cloudfront.net/png/1490-200.png"></div>
 			<% end %>
 		</div>
 	</div>
