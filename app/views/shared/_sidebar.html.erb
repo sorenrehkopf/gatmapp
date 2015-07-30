@@ -7,7 +7,7 @@
 			<%= cl_image_tag(@user.picture, :width => 100, :height => 100, :crop => :fill) %>
 		</div>
 		<div id='userText'>
-			<h3><%= @user.user_name %></h3>
+			<a href="profile"><h3><%= @user.user_name %></h3></a>
 			<ul class="nav nav-pills">
 			  <li role="presentation"><%= link_to "Feed.", feed_path %></li>
 			  <li role="presentation"><%= link_to "Collection.", collection_path %></li>
@@ -18,6 +18,13 @@
 	</div>
 	<hr>
 	<div id="userSearch">
+		
+	<%= form_tag(users_path, :method => "get", id: "search-form") do %>
+		<%= text_field_tag :search, params[:search], placeholder: "Search users" %>
+		<%= submit_tag "Search" %>
+	<% end %>
+	
+
 	<form class="form-group">
 		<input type="text" class="form-control" id="userSearchField" 
 		placeholder="Search for users by user-name.">

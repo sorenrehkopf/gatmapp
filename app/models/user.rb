@@ -29,5 +29,13 @@ class User < ActiveRecord::Base
  	def self.authenticate email, password
 		User.find_by_email(email).try(:authenticate, password)
 	end
+
+	def self.search(search)
+	  if search
+	    find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+	  else
+	    find(:all)
+	  end
+	end
 	
 end

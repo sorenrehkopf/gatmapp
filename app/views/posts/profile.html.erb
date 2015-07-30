@@ -1,0 +1,19 @@
+<div class="col-sm-3 pull-left" id="sidebar">
+	<%= render "shared/sidebar" %>
+</div>
+<div class="col-sm-9 pull-right" id="mainView">
+	<div id="userCollInfo">
+		<%= cl_image_tag(@user.picture, :width => 140, :height => 140, :crop => :fill) %>
+		<h1>Your public profile.</h1>
+		<p class="notification"></p>
+		<hr>
+	</div>
+	<div class="mainScroll dimmed">
+		<div id="collectionView">
+			<% @current_user.posts.each do |post| %>
+			<div class="imageDiv" imgurl="<%= post.url %>" imgId="<%= post.id %>" style="background-image: url(<%= post.url %>);"><img class="show" src="https://cdn4.iconfinder.com/data/icons/geomicons/32/672382-expand-128.png"><img class="delete" src="http://freeiconbox.com/icon/256/12960.png"><img class="post" src="https://d30y9cdsu7xlg0.cloudfront.net/png/18962-200.png"></div>
+			<% end %>
+		</div>
+	</div>
+</div>	
+<%= render "shared/usersearch" %>

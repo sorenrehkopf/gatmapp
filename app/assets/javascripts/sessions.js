@@ -35,10 +35,6 @@ $(function(){
 		});
 
 	});
-	
-	$("#userSrchBtn").on('click',function(e){
-		e.preventDefault()
-	})
 
 	$("#searchResults").on('mouseover','div',function(){
 		$(this).children().animate({opacity:'0.7'},0);
@@ -60,12 +56,15 @@ $(function(){
 		e.preventDefault()
 		// console.log($(this).attr('imgurl'))
 		var imgSrc = $(this).parent().attr('imgurl');
+
 		$.ajax({
 			url:'/gifs',
 			method: 'POST',
 			data: {'url': imgSrc}
 		}).done(function(){
-			console.log(imgSrc)
+			$(".notification").html('Saved to your collection.')
+			$(".notification").fadeIn(400).delay(600)
+			$(".notification").fadeOut(1000)
 		}).error(function(err){
 			console.log(err)
 		});
@@ -80,10 +79,30 @@ $(function(){
 			method: 'POST',
 			data: {'url': imgSrc}
 		}).done(function(){
+			$(".notification").html('Successfully posted.')
+			$(".notification").fadeIn(400).delay(400)
+			$(".notification").fadeOut(1000)
 			console.log(imgSrc)
 		}).error(function(err){
 			console.log(err)
 		});
+	});
+
+	$("#userSrchBtn").on('click',function(e){
+		e.preventDefault()
+		var srch = $('#userSearchField').val();
+		alert(srch)
+		// $.ajax({
+		// 	url:'/users/'+imgId,
+		// 	method: 'GET',
+		// 	data: {'user_name': imgId}
+		// }).done(function(e){
+		// 	console.log(e)
+		// 	btn.remove()
+		// 	// console.log(imgId)
+		// }).error(function(err){
+		// 	// console.log(err)
+		// });
 	});
 
 

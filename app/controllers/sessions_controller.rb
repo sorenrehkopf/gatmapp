@@ -8,11 +8,17 @@ class SessionsController < ApplicationController
 	def index
 		@user = current_user
 		@users = User.all
+		  if params[:search]
+		    @users = User.search(params[:search]).order("created_at DESC")
+		  else
+		    @users = User.all.order('created_at DESC')
+		  end
 	end
 
 	def feed
 		@user = current_user
 		@users = User.all
+		@posts = Post.order("created_at DESC").all
 	end
 
 	def destroy

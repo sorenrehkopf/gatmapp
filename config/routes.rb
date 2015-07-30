@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'feed' => 'sessions#feed'
 
   get 'collection' => 'gifs#collection'
+  get 'profile' => 'posts#profile'
 
   resources :sessions
 

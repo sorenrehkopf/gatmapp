@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
 
-	def collection
+	def profile
 		@user = current_user
 		@users = User.all
+		@user_name = @user.user_name
 	end
 
 	def new
@@ -20,6 +21,12 @@ class PostsController < ApplicationController
 	def show
 		@post = Post.create(url: params[:id])
 		redirect_to sessions_path
+	end
+
+	def destroy
+		post = Post.find(params[:id])
+		result=post.delete
+		render :json => {result:result}
 	end
 
 end

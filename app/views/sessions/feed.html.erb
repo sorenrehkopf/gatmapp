@@ -4,14 +4,12 @@
 <div class="col-sm-9 pull-right" id="mainView">
 	<div class="feedScroll dimmed">
 			<div id="feedView">
-					<% @user.friends.each do |friend| %>
-						<% friend.posts.each do |post| %>
+						<% @posts.each do |post| %>
 							<div>
-								<p><%= post.user.user_name %></p>
+							
 								<img src="<%= post.url %>">
 							</div>
 						<% end %>
-					<% end %>
 			</div>
 	</div>
 </div>	
