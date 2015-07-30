@@ -26,5 +26,10 @@ class GifsController < ApplicationController
 		redirect_to sessions_path
 	end
 
+	def destroy
+		@gif = Gif.destroy
+		redirect_to collection_path
+	end
+
 
 end

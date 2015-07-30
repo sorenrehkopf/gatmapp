@@ -5,10 +5,10 @@
 	<div id="userShowInfo">
 		<%= cl_image_tag(@user_show.picture, :width => 140, :height => 140, :crop => :fill) %>
 		<h1><%= @user_show.user_name %></h1>
-		<%= link_to "Follow.", friendships_path(:friend_id => @user_show), :method => :post %>
+		<p><%= link_to "Follow.", friendships_path(:friend_id => @user_show), :method => :post %></p>
 		<hr>
 	</div>
-	<div id="mainScroll">
+	<div class="mainScroll dimmed">
 			<div id="collectionView">
 					<% @user_show.gifs.each do |gif| %>
 						<div>

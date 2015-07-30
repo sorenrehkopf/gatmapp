@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
   resources :friendships
 
+  resources :posts
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

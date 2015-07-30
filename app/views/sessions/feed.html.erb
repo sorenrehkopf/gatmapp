@@ -2,7 +2,7 @@
 	<%= render "shared/sidebar" %>
 </div>
 <div class="col-sm-9 pull-right" id="mainView">
-	<div id="mainScroll">
+	<div class="feedScroll dimmed">
 			<div id="feedView">
 					<% @user.friends.each do |friend| %>
 						<% friend.gifs.each do |gif| %>

@@ -92,12 +92,12 @@ body{
 #searchResults img{
 	height:17.5%;
 	overflow:hidden;
-	bottom:5%;
 	opacity:0;
+	display:block;
 }
 #userInfo h3{
 	text-decoration: underline;
-	display:inline;
+	display:block;
 }
 #userText{
 	display:inline-block;
@@ -126,6 +126,10 @@ body{
 	display:inline;
 	vertical-align: bottom;
 }
+#userShowInfo p{
+	display:inline;
+	vertical-align: bottom;
+}
 #userShowInfo hr{
 	margin-top: 5px;
 	margin-bottom: 8px;
@@ -137,6 +141,12 @@ body{
 #userCollInfo hr{
 	margin-top: 5px;
 	margin-bottom: 8px;
+}
+.mainScroll img{
+	height:17.5%;
+	overflow:hidden;
+	opacity:0;
+	display:block;
 }
 .mainScroll{
 	overflow:auto;
@@ -163,5 +173,18 @@ body{
 }
 #followerFollowingInfo::-webkit-scrollbar-thumb{
 	background-color: rgba(180,180,180,.2);
+	width:6px;
+}
+.feedScroll{
+	overflow:auto;
+	max-height:calc(100vh);
+	text-align: right;
+}
+.feedScroll::-webkit-scrollbar{
+	background-color: rgba(20,20,20,0);
+	width:6px;
+}
+.feedScroll::-webkit-scrollbar-thumb{
+	background-color: rgba(20,20,20,.4);
 	width:6px;
 }
