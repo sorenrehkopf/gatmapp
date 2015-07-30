@@ -135,15 +135,30 @@ body{
 	margin-top: 5px;
 	margin-bottom: 8px;
 }
-#mainScroll{
+.mainScroll{
 	overflow:auto;
 	max-height:calc(100vh - 125px);
 }
-#mainScroll::-webkit-scrollbar{
+.mainScroll::-webkit-scrollbar{
 	background-color: rgba(20,20,20,0);
 	width:6px;
 }
-#mainScroll::-webkit-scrollbar-thumb{
+.mainScroll::-webkit-scrollbar-thumb{
 	background-color: rgba(20,20,20,.4);
+	width:6px;
+}
+#collectionView div{
+	display:inline-block;
+}
+#followerFollowingInfo{
+	overflow:auto;
+	max-height:52%;
+}
+#followerFollowingInfo::-webkit-scrollbar{
+	background-color: rgba(180,180,180,0);
+	width:6px;
+}
+#followerFollowingInfo::-webkit-scrollbar-thumb{
+	background-color: rgba(180,180,180,.2);
 	width:6px;
 }

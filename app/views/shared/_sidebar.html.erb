@@ -1,0 +1,51 @@
+<div class="seshLogo">
+		g@
+</div>
+	<hr>
+	<div id="userInfo">
+		<div id='userPic'>
+			<%= cl_image_tag(@user.picture, :width => 100, :height => 100, :crop => :fill) %>
+		</div>
+		<div id='userText'>
+			<h3><%= @user.user_name %></h3>
+			<ul class="nav nav-pills">
+			  <li role="presentation"><%= link_to "Feed.", feed_path %></li>
+			  <li role="presentation"><%= link_to "Collection.", collection_path %></li>
+			  <li role="presentation"><%= link_to "Search.", sessions_path %></li>
+			</ul>
+			<h6><%= link_to "Log-out.", logout_path %></h6>
+		</div>	
+	</div>
+	<hr>
+	<div id="userSearch">
+	<form class="form-group">
+		<input type="text" class="form-control" id="userSearchField" 
+		placeholder="Search for users by user-name.">
+		<button class="btn btn-primary" id="userSrchBtn" data-toggle="modal" data-target="#userSearchRslts">
+		<span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+	</form>
+	</div>
+	<div id="followerFollowingInfo">
+		<div id="following">
+			<h4>Following.</h4>
+			<hr>
+			<ul>
+				<% for friendship in @user.friendships %>
+					<p>
+					<%= cl_image_tag(friendship.friend.picture, :width => 30, :height => 30, :crop => :fill) %>
+					<%= friendship.friend.user_name %> (<%= link_to "Profile.", friendship.friend %>)
+					(<%= link_to "Remove.", friendship, :method => :delete %>)</p>
+				<% end %>
+			</ul>
+		</div>
+		<div id="followers">
+			<h4>Followers</h4>
+			<hr>
+			<ul>
+				<% for friendship in @user.inverse_friends %>
+					<%= cl_image_tag(friendship.picture, :width => 30, :height => 30, :crop => :fill) %>
+					<p><%=h friendship.user_name %></p>
+				<% end %>
+			</ul>
+		</div>
+	</div>

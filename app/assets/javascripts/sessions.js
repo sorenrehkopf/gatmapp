@@ -35,6 +35,10 @@ $(function(){
 		});
 
 	});
+	
+	$("#userSrchBtn").on('click',function(e){
+		e.preventDefault()
+	})
 
 	$("#searchResults").on('mouseover','div',function(){
 		$(this).children().animate({opacity:'0.7'},0);
