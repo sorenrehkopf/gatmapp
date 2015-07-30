@@ -95,7 +95,8 @@ body{
 	opacity:0;
 	display:block;
 }
-#userInfo h3{
+#userText h3{
+	margin-top: 0px;
 	text-decoration: underline;
 	display:block;
 }
@@ -150,7 +151,7 @@ body{
 }
 .mainScroll{
 	overflow:auto;
-	max-height:calc(100vh - 125px);
+	height:calc(100vh - 125px);
 }
 .mainScroll::-webkit-scrollbar{
 	background-color: rgba(20,20,20,0);
@@ -188,3 +189,16 @@ body{
 	background-color: rgba(20,20,20,.4);
 	width:6px;
 }
+/*#feedView{
+	text-align: right;
+}
+#feedView img{
+	height:17.5%;
+	overflow:hidden;
+/*	opacity:0;*/
+	display:block;
+}
+#feedView div{
+	display:block;
+	height:100%;
+}*/

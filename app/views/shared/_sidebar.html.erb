@@ -43,8 +43,9 @@
 			<hr>
 			<ul>
 				<% for friendship in @user.inverse_friends %>
+					<p>
 					<%= cl_image_tag(friendship.picture, :width => 30, :height => 30, :crop => :fill) %>
-					<p><%=h friendship.user_name %></p>
+					<%=h friendship.user_name %></p>
 				<% end %>
 			</ul>
 		</div>

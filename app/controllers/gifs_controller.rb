@@ -27,7 +27,7 @@ class GifsController < ApplicationController
 	end
 
 	def destroy
-		@gif = Gif.destroy
+		@gif.delete
 		redirect_to collection_path
 	end
 

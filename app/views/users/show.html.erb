@@ -10,10 +10,8 @@
 	</div>
 	<div class="mainScroll dimmed">
 			<div id="collectionView">
-					<% @user_show.gifs.each do |gif| %>
-						<div>
-							<img src="<%= gif.url %>">
-						</div>
+					<% @user_show.posts.each do |post| %>
+						<div class="imageDiv" imgurl="<%= post.url %>" style="background-image: url(<%= post.url %>);"><img class="show" src="https://cdn4.iconfinder.com/data/icons/geomicons/32/672382-expand-128.png"><img class="delete" src="http://freeiconbox.com/icon/256/12960.png"><img class="post" src="https://d30y9cdsu7xlg0.cloudfront.net/png/1490-200.png"></div>
 					<% end %>
 			</div>
 	</div>
