@@ -1,6 +1,8 @@
 class GifsController < ApplicationController
 
-	before_action :current_user
+	# if !@current_user
+	#   	redirect_to root_path
+ #  	end
 
 	def collection
 		@user = current_user

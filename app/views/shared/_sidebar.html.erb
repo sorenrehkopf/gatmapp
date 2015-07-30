@@ -34,7 +34,7 @@
 					<p>
 					<%= cl_image_tag(friendship.friend.picture, :width => 30, :height => 30, :crop => :fill) %>
 					<%= friendship.friend.user_name %> (<%= link_to "Profile.", friendship.friend %>)
-					(<%= link_to "Remove.", friendship, :method => :delete %>)</p>
+					(<%= link_to "Unfollow.", friendship, :method => :delete %>)</p>
 				<% end %>
 			</ul>
 		</div>

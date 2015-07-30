@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 
-	before_action :current_user
+	# if !@current_user
+	#   	redirect_to root_path
+ #  	end
 
 	def new
     @user = User.new
@@ -18,9 +20,13 @@ class UsersController < ApplicationController
 	@user = User.create(user_name: params[:user][:user_name],picture: cloudinary_file['public_id'],
 		email: params[:user][:email],password: params[:user][:password],
 		password_confirmation: params[:user][:password_confirmation]);
-
-		  flash[:success] = "You are signed up, you may now log in."
+		if @user.persisted?
+		  flash[:success] = "You are signed up! Login above."
 		  redirect_to root_path
+		else
+	      flash[:danger] = @user.errors.full_messages.uniq.to_sentence
+	      redirect_to root_path	
+	    end
 
 	end
 
