@@ -1,5 +1,5 @@
 body{
-	background: radial-gradient(circle farthest-corner at center,rgba(220, 260, 25, 1),rgba(220, 260, 25, 1),rgba(220, 260, 25, 1),rgba(220, 260, 25, .3));
+	background: radial-gradient(circle farthest-corner at center,rgba(220, 255, 25, 1),rgba(220, 255, 25, 1),rgba(220, 255, 25, 1),rgba(220, 255, 25, .3));
 	background-position:absolute;
 	min-height: 100vh;
 	overflow: hidden;
