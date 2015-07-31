@@ -5,8 +5,9 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h3 class="modal-title" id="myModalLabel">User search.</h3>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" id="usrSrchRslts">
         <% for user in @users %>
+        
           <div class="user">
             <p>
              <%= cl_image_tag(user.picture, :width => 50, :height => 50, :crop => :fill) %>

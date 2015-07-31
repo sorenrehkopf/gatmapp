@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_action :current_user
 
+  @users = User.all
 
   	def current_user
   		@current_user ||= User.find_by_id(session[:user_id])

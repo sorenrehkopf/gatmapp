@@ -19,6 +19,13 @@ $(function(){
 	// $(".opImgDiv").on('mouseout','img',function(){
 	// 	$(this).animate({height:'40px'},100);
 	// });
+	
+	$(".opImgDiv").on('click','.show',function(e){
+		e.preventDefault()
+		var imgSrc = $(this).parent().attr('imgUrl');
+		$('#gifExpandImg').html('<img src="'+imgSrc+'">')
+
+	});
 
 	$(".opImgDiv").on('click','.delete',function(e){
 		e.preventDefault()

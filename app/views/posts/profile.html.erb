@@ -13,7 +13,7 @@
 			<% @current_user.posts.each do |post| %>
 							<div class="well">
 								<div class="opImgDiv" imgId="<%= post.id %>" imgUrl="<%= post.url %>">
-								<img class="show" src="https://cdn4.iconfinder.com/data/icons/geomicons/32/672382-expand-128.png"><img class="delete" src="http://freeiconbox.com/icon/256/12960.png"><img class="post" src="https://d30y9cdsu7xlg0.cloudfront.net/png/18962-200.png"></div>
+								<img class="show" src="https://cdn4.iconfinder.com/data/icons/geomicons/32/672382-expand-128.png" data-toggle="modal" data-target="#gifExpand"><img class="delete" src="http://freeiconbox.com/icon/256/12960.png"><img class="post" src="https://d30y9cdsu7xlg0.cloudfront.net/png/18962-200.png"></div>
 								<img src="<%= post.url %>">
 								<p><%= post.created_at %></p>
 							</div>
@@ -22,3 +22,4 @@
 	</div>
 </div>	
 <%= render "shared/usersearch" %>
+<%= render "shared/expand" %>

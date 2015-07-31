@@ -249,3 +249,6 @@ body{
 	opacity:0.4;
 	display:block;
 }
+#gifExpand{
+	background-opacity:0;
+}

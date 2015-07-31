@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
 	def create
 		@user = current_user
-		@post = @user.posts.create(url: params[:url])
+		@post = @user.posts.create(params[:url])
 		respond_to do |format|
    		format.json { head :ok }
  	end

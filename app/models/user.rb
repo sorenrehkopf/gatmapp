@@ -36,5 +36,6 @@ class User < ActiveRecord::Base
 	else
 		scoped
 	end
+end
 	
 end

@@ -6,11 +6,6 @@ class UsersController < ApplicationController
 
  	def index
 	  @users = User.all
-	  if params[:search]
-	    @users = User.search(params[:search]).order("created_at DESC")
-	  else
-	    @users = User.all.order('created_at DESC')
-	  end
 	end
 
 	def new
@@ -37,6 +32,12 @@ class UsersController < ApplicationController
 	      redirect_to root_path	
 	    end
 
+	end
+
+	def search
+		
+		result = User.search('admin')
+		render :json => {result:result}
 	end
 
 	def show

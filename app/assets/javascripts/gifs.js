@@ -20,6 +20,13 @@ $("#collectionView").on('mouseover','div',function(){
 		$(this).animate({height:'17.5%'},100);
 	});
 
+	$("#collectionView").on('click','.show',function(e){
+		e.preventDefault()
+		var imgSrc = $(this).parent().attr('imgurl');
+		$('#gifExpandImg').html('<img src="'+imgSrc+'">')
+
+	});
+
 
 	$("#collectionView").on('click','.delete',function(e){
 		e.preventDefault()

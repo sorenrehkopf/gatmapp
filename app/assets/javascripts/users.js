@@ -4,6 +4,13 @@ $("#userSrchBtn").on('click',function(e){
 		e.preventDefault()
 	});
 
+$(".profScroll").on('click','.show',function(e){
+	e.preventDefault()
+	var imgSrc = $(this).parent().attr('imgUrl');
+	$('#gifExpandImg').html('<img src="'+imgSrc+'">')
+
+});
+
 $(".profScroll").on('click','.save',function(e){
 		e.preventDefault()
 		// console.log($(this).attr('imgurl'))

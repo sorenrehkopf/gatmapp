@@ -11,7 +11,7 @@ $(function(){
 			console.log(giphs);
 			for(i=0;i<giphs.data.length;i++){
 				// $('#searchResults').append('<a href="/gifs/'+giphs.data[i].id+'"><img src='+giphs.data[i].images.original.url+'></a>');
-				$('#searchResults').append('<div class="imageDiv" imgurl="'+giphs.data[i].images.original.url+'" style="background-image: url('+giphs.data[i].images.original.url+');"><img class="show" src="https://cdn4.iconfinder.com/data/icons/geomicons/32/672382-expand-128.png"><img class="save" src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/add-128.png"><img class="post" src="https://d30y9cdsu7xlg0.cloudfront.net/png/1490-200.png"></div>' );
+				$('#searchResults').append('<div class="imageDiv" imgurl="'+giphs.data[i].images.original.url+'" style="background-image: url('+giphs.data[i].images.original.url+');"><img class="show" src="https://cdn4.iconfinder.com/data/icons/geomicons/32/672382-expand-128.png" data-toggle="modal" data-target="#gifExpand"><img class="save" src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/add-128.png"><img class="post" src="https://d30y9cdsu7xlg0.cloudfront.net/png/1490-200.png"></div>' );
 			};
 		});
 		$('#gifSearch').animate({'margin-top':'0%'},1000,function(){
@@ -26,7 +26,7 @@ $(function(){
 					$.get(url,data,function(giphs1){
 						console.log(giphs1);
 						for(i=0;i<giphs1.data.length;i++){
-							$('#searchResults').append('<div class="imageDiv" imgurl="'+giphs1.data[i].images.original.url+'" style="background-image: url('+giphs1.data[i].images.original.url+');"><img class="show" src="https://cdn4.iconfinder.com/data/icons/geomicons/32/672382-expand-128.png"><img class="save" src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/add-128.png"><img class="post" src="https://d30y9cdsu7xlg0.cloudfront.net/png/1490-200.png"></div>' );
+							$('#searchResults').append('<div class="imageDiv" imgurl="'+giphs1.data[i].images.original.url+'" style="background-image: url('+giphs1.data[i].images.original.url+');"><img class="show" src="https://cdn4.iconfinder.com/data/icons/geomicons/32/672382-expand-128.png" data-toggle="modal" data-target="#gifExpand"><img class="save" src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/add-128.png"><img class="post" src="https://d30y9cdsu7xlg0.cloudfront.net/png/1490-200.png"></div>' );
 						};
 						more = true
 					});
@@ -50,6 +50,20 @@ $(function(){
 
 	$("#searchResults").on('mouseout','img',function(){
 		$(this).animate({height:'17.5%'},100);
+	});
+
+	$("#searchResults").on('click','.show',function(e){
+		e.preventDefault()
+		var imgSrc = $(this).parent().attr('imgurl');
+		$('#gifExpandImg').html('<img src="'+imgSrc+'">')
+
+	});
+
+	$("#feedView").on('click','.show',function(e){
+		e.preventDefault()
+		var imgSrc = $(this).parent().attr('imgurl');
+		$('#gifExpandImg').html('<img src="'+imgSrc+'">')
+
 	});
 
 	$("#searchResults").on('click','.save',function(e){
@@ -161,7 +175,7 @@ $(function(){
 	$("#userSrchBtn").on('click',function(e){
 		e.preventDefault()
 		var srch = $('#userSearchField').val();
-		alert(srch)
+
 		// $.ajax({
 		// 	url:'/users/'+imgId,
 		// 	method: 'GET',
