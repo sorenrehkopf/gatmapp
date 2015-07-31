@@ -3,7 +3,6 @@ class PostsController < ApplicationController
 	def profile
 		@user = current_user
 		@users = User.all
-		@user_name = @user.user_name
 	end
 
 	def new
@@ -12,15 +11,15 @@ class PostsController < ApplicationController
 
 	def create
 		@user = current_user
-		@post = @user.posts.create(params[:url])
+		@post = @user.posts.create(url: params[:url])
 		respond_to do |format|
    		format.json { head :ok }
- 	end
+ end
 	end
 
 	def show
-		@post = Post.create(url: params[:id])
-		redirect_to sessions_path
+		# @post = post.create(url: params[:id])
+		# redirect_to sessions_path
 	end
 
 	def destroy
@@ -28,5 +27,4 @@ class PostsController < ApplicationController
 		result=post.delete
 		render :json => {result:result}
 	end
-
 end

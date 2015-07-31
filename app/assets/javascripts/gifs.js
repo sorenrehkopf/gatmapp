@@ -51,16 +51,17 @@ $("#collectionView").on('mouseover','div',function(){
 
 	$("#collectionView").on('click','.post',function(e){
 		e.preventDefault()
-		// console.log($(this).attr('imgurl'))
 		var imgSrc = $(this).parent().attr('imgurl');
 		$(".notification").html('Successfully posted.')
 		$(".notification").fadeIn(400).delay(400)
 		$(".notification").fadeOut(1000)
+		console.log(imgSrc)
 		$.ajax({
 			url:'/posts',
 			method: 'POST',
 			data: {'url': imgSrc}
 		}).done(function(e){
+			console.log('done!')
 		}).error(function(err){
 			console.log(err)
 		});
