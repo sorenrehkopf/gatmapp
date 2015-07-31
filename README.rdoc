@@ -1,28 +1,9 @@
-== README
+Gatmapp readme.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+hosted app:
+https://agile-tundra-4249.herokuapp.com/
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+wireframes:
+https://drive.google.com/folderview?id=0BwtiQqKaMnvjfkt4Xy1YeTYwYUQ5VWN1NUt2bEFzdmd1bjctdlFOWjh6dERZRnNINnNOaUE&usp=sharing
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
