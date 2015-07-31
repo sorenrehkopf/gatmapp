@@ -2,14 +2,19 @@
 	<%= render "shared/sidebar" %>
 </div>
 <div class="col-sm-9 pull-right" id="mainView">
-	<div class="feedScroll dimmed">
+	<div class="feedScroll">
 			<div id="feedView">
-						<% @posts.each do |post| %>
-							<div>
-							
+			<h1>Your feed</h1>
+						  <% @sorted_posts.each do |post| %>
+							<div class="well">
+								<h3><%= post.user.user_name %></h3>
+								<%= cl_image_tag(post.user.picture, :width => 50, :height => 50, :crop => :fill) %>
+								<div class="opImgDiv" imgurl="<%= post.url %>">
+								<img class="show" src="https://cdn4.iconfinder.com/data/icons/geomicons/32/672382-expand-128.png"><img class="save" src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/add-128.png"><img class="post" src="https://d30y9cdsu7xlg0.cloudfront.net/png/1490-200.png"></div>
 								<img src="<%= post.url %>">
+								<p><%= post.created_at %></p>
 							</div>
-						<% end %>
+							<% end %>
 			</div>
 	</div>
 </div>	

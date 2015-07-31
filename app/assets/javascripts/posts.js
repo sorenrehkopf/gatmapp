@@ -4,11 +4,27 @@ $(function(){
 		e.preventDefault()
 	});
 
-	$("#collectionView").on('click','.delete',function(e){
+	$(".opImgDiv").on('mouseover','img',function(){
+		$(this).animate({opacity:'0.8'},0);
+	});
+
+	$(".opImgDiv").on('mouseout','img',function(){
+		$(this).animate({opacity:'0.4'},0);
+	});
+
+	// $(".opImgDiv").on('mouseover','img',function(){
+	// 	$(this).animate({height:'60px'},100);
+	// });
+
+	// $(".opImgDiv").on('mouseout','img',function(){
+	// 	$(this).animate({height:'40px'},100);
+	// });
+
+	$(".opImgDiv").on('click','.delete',function(e){
 		e.preventDefault()
 		var imgId = $(this).parent().attr('imgId');
 		console.log(imgId)
-		var btn = $(this).parent()
+		var btn = $(this).parent().parent()
 		$(".notification").html('Successfully deleted.')
 			$(".notification").fadeIn(400).delay(400)
 			$(".notification").fadeOut(1000)
@@ -25,11 +41,10 @@ $(function(){
 		});
 	});
 
-	$("#collectionView").on('click','.post',function(e){
+	$(".opImgDiv").on('click','.post',function(e){
 		e.preventDefault()
 		// console.log($(this).attr('imgurl'))
-		var imgSrc = $(this).parent().attr('imgurl');
-		var btn = $(this).parent().html()
+		var imgSrc = $(this).parent().attr('imgUrl');
 		$.ajax({
 			url:'/posts',
 			method: 'POST',

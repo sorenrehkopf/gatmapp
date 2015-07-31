@@ -16,9 +16,15 @@ class SessionsController < ApplicationController
 	end
 
 	def feed
+		@posts=[]
 		@user = current_user
 		@users = User.all
-		@posts = Post.order("created_at DESC").all
+		@user.friends.each do |friend|
+					friend.posts.each do |post|
+						@posts	<< post
+					end
+				end
+		@sorted_posts = @posts.sort_by{|e| e[:created_at]}.reverse
 	end
 
 	def destroy

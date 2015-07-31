@@ -8,12 +8,17 @@
 		<p><%= link_to "Follow.", friendships_path(:friend_id => @user_show), :method => :post %></p>
 		<hr>
 	</div>
-	<div class="mainScroll dimmed">
-			<div id="collectionView">
-					<% @user_show.posts.each do |post| %>
-						<div class="imageDiv" imgurl="<%= post.url %>" style="background-image: url(<%= post.url %>);"><img class="show" src="https://cdn4.iconfinder.com/data/icons/geomicons/32/672382-expand-128.png"><img class="save" src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/add-128.png"><img class="post" src="https://d30y9cdsu7xlg0.cloudfront.net/png/1490-200.png"></div>
-					<% end %>
-			</div>
+	<div class="profScroll">
+			<% @sorted_posts.each do |post| %>
+							<div class="well">
+								<h3><%= post.user.user_name %></h3>
+								<%= cl_image_tag(post.user.picture, :width => 50, :height => 50, :crop => :fill) %>
+								<div class="opImgDiv">
+								<img class="show" src="https://cdn4.iconfinder.com/data/icons/geomicons/32/672382-expand-128.png"><img class="save" src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/add-128.png"><img class="post" src="https://d30y9cdsu7xlg0.cloudfront.net/png/18962-200.png"></div>
+								<img src="<%= post.url %>">
+								<p><%= post.created_at %></p>
+							</div>
+							<% end %>
 	</div>
 </div>	
 <%= render "shared/usersearch" %>

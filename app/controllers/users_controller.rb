@@ -43,6 +43,7 @@ class UsersController < ApplicationController
 		@user = current_user
 		@user_show = User.find (params[:id])
 		@users = User.all
+		@sorted_posts = @user_show.posts.all.sort_by{|e| e[:created_at]}.reverse
 	end
 
 	private
