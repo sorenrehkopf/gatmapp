@@ -26,15 +26,15 @@ $("#collectionView").on('mouseover','div',function(){
 		var imgId = $(this).parent().attr('imgId');
 		console.log(imgId)
 		var btn = $(this).parent()
+		$(".notification").html('Successfully deleted.')
+			$(".notification").fadeIn(400).delay(400)
+			$(".notification").fadeOut(1000)
 		$.ajax({
 			url:'/gifs/'+imgId,
 			method: 'DELETE',
 			data: {'id': imgId}
 		}).done(function(e){
 			console.log(e)
-			$(".notification").html('Successfully deleted.')
-			$(".notification").fadeIn(400).delay(400)
-			$(".notification").fadeOut(1000)
 			btn.remove()
 			// console.log(imgId)
 		}).error(function(err){
@@ -46,14 +46,14 @@ $("#collectionView").on('mouseover','div',function(){
 		e.preventDefault()
 		// console.log($(this).attr('imgurl'))
 		var imgSrc = $(this).parent().attr('imgurl');
+		$(".notification").html('Successfully posted.')
+		$(".notification").fadeIn(400).delay(400)
+		$(".notification").fadeOut(1000)
 		$.ajax({
 			url:'/posts',
 			method: 'POST',
 			data: {'url': imgSrc}
 		}).done(function(e){
-			$(".notification").html('Successfully posted.')
-			$(".notification").fadeIn(400).delay(400)
-			$(".notification").fadeOut(1000)
 		}).error(function(err){
 			console.log(err)
 		});

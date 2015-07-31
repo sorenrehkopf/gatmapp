@@ -31,8 +31,10 @@ class User < ActiveRecord::Base
 	end
 
 	def self.search(search)
-	  where("name LIKE ?", "%#{search}%") 
-	  where("content LIKE ?", "%#{search}%")
+	if search
+	  where("user_name LIKE ?", "%#{search}%") 
+	else
+		scoped
 	end
 	
 end

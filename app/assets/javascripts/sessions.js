@@ -56,15 +56,14 @@ $(function(){
 		e.preventDefault()
 		// console.log($(this).attr('imgurl'))
 		var imgSrc = $(this).parent().attr('imgurl');
-
+		$(".notification").html('Saved to your collection.')
+		$(".notification").fadeIn(400).delay(600)
+		$(".notification").fadeOut(1000)
 		$.ajax({
 			url:'/gifs',
 			method: 'POST',
 			data: {'url': imgSrc}
 		}).done(function(){
-			$(".notification").html('Saved to your collection.')
-			$(".notification").fadeIn(400).delay(600)
-			$(".notification").fadeOut(1000)
 		}).error(function(err){
 			console.log(err)
 		});
@@ -74,49 +73,49 @@ $(function(){
 		e.preventDefault()
 		// console.log($(this).attr('imgurl'))
 		var imgSrc = $(this).parent().attr('imgurl');
+		$(".notification").html('Successfully posted.')
+			$(".notification").fadeIn(400).delay(400)
+			$(".notification").fadeOut(1000)
 		$.ajax({
 			url:'/posts',
 			method: 'POST',
 			data: {'url': imgSrc}
 		}).done(function(){
-			$(".notification").html('Successfully posted.')
-			$(".notification").fadeIn(400).delay(400)
-			$(".notification").fadeOut(1000)
 			console.log(imgSrc)
 		}).error(function(err){
 			console.log(err)
 		});
 	});
 
-	$("#searchResults").on('click','.save',function(e){
+	$("#feedView").on('click','.save',function(e){
 		e.preventDefault()
 		// console.log($(this).attr('imgurl'))
 		var imgSrc = $(this).parent().attr('imgurl');
+		// $(".notification").html('Saved to your collection.')
+		// $(".notification").fadeIn(400).delay(600)
+		// $(".notification").fadeOut(1000)
 		$.ajax({
 			url:'/gifs',
 			method: 'POST',
 			data: {'url': imgSrc}
 		}).done(function(){
-			$(".notification").html('Saved to your collection.')
-			$(".notification").fadeIn(400).delay(600)
-			$(".notification").fadeOut(1000)
 		}).error(function(err){
 			console.log(err)
 		});
 	});
 
-	$("#searchResults").on('click','.post',function(e){
+	$(".feedView").on('click','.post',function(e){
 		e.preventDefault()
 		// console.log($(this).attr('imgurl'))
 		var imgSrc = $(this).parent().attr('imgurl');
+		// $(".notification").html('Successfully posted.')
+		// $(".notification").fadeIn(400).delay(400)
+		// $(".notification").fadeOut(1000)
 		$.ajax({
 			url:'/posts',
 			method: 'POST',
 			data: {'url': imgSrc}
 		}).done(function(){
-			$(".notification").html('Successfully posted.')
-			$(".notification").fadeIn(400).delay(400)
-			$(".notification").fadeOut(1000)
 			console.log(imgSrc)
 		}).error(function(err){
 			console.log(err)

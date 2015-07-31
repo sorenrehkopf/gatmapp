@@ -45,14 +45,14 @@ $(function(){
 		e.preventDefault()
 		// console.log($(this).attr('imgurl'))
 		var imgSrc = $(this).parent().attr('imgUrl');
+		$(".notification").html('Re-posted.')
+		$(".notification").fadeIn(400).delay(400)
+		$(".notification").fadeOut(1000)
 		$.ajax({
 			url:'/posts',
 			method: 'POST',
 			data: {'url': imgSrc}
 		}).done(function(){
-			$(".notification").html('Re-posted.')
-			$(".notification").fadeIn(400).delay(400)
-			$(".notification").fadeOut(1000)
 			console.log(imgSrc)
 		}).error(function(err){
 			console.log(err)
