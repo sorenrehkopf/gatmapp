@@ -1,9 +1,13 @@
 Gatmapp readme.
 
 hosted app:
-https://agile-tundra-4249.herokuapp.com/
+https://gatmapp.herokuapp.com/
 
 wireframes:
 https://drive.google.com/folderview?id=0BwtiQqKaMnvjfkt4Xy1YeTYwYUQ5VWN1NUt2bEFzdmd1bjctdlFOWjh6dERZRnNINnNOaUE&usp=sharing
 
+Technologies:
+Ruby. JS. HTML5. CSS3. JQuery. Bootstrap. Giphy Public API.
 
+Bugs:
+Many many. Biggest non functional feature is user search function does not work. Users own profile does not display in post date order.
