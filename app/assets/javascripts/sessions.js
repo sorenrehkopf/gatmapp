@@ -3,7 +3,7 @@ $(function(){
 	$('#srchBtn').on('click',function(e){
     	e.preventDefault();
     	$('#searchResults').html('');
-    	var url="http://api.giphy.com/v1/gifs/search";
+    	var url="https://api.giphy.com/v1/gifs/search";
 		var data="q="+$('#gifSearchField').val()+"&api_key=dc6zaTOxFJmzC";
 		var offset=0
 		$.get(url,data,function(giphs){
