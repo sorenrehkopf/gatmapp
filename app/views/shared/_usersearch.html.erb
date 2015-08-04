@@ -6,16 +6,7 @@
         <h3 class="modal-title" id="myModalLabel">User search.</h3>
       </div>
       <div class="modal-body" id="usrSrchRslts">
-        <% for user in @users %>
-          <div>
-            <p>
-             <%= cl_image_tag(user.picture, :width => 50, :height => 50, :crop => :fill) %>
-             <strong><%=h user.user_name %></strong>
-             <%= link_to "Follow.", friendships_path(:friend_id => user), :method => :post %>
-             <div class="clear"></div>
-            </p>
-          </div> 
-        <% end %>
+        
       </div>
     </div>
   </div>

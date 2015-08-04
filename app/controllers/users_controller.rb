@@ -35,12 +35,11 @@ class UsersController < ApplicationController
 	end
 
 	def search
-		# users = User.search(params[:user_name])	
-		# # result = User.search(srchTrm)
-		# render users
-		puts ('hello')
-		result=User.search(params[:user_name])
-		render :json => {result:result}
+		users = []
+		User.search(params[:user_name]).each do |user|
+			users.push({user_name: user.user_name,pic: user.picture})
+		end
+		render :json => users
 	end
 
 	def show
