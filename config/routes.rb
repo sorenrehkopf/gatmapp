@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get 'collection' => 'gifs#collection'
   get 'profile' => 'posts#profile'
 
-  get 'users/search' => 'users#search'
+  get '/search', to: 'users#search'
 
   resources :sessions
 
