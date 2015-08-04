@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 	def search
 		users = []
 		User.search(params[:user_name]).each do |user|
-			users.push({user_name: user.user_name,pic: user.picture})
+			users.push({user_name: user.user_name,pic: user.picture,id: user.id})
 		end
 		render :json => users
 	end

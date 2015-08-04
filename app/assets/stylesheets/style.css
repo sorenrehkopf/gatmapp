@@ -131,6 +131,17 @@ body{
 #userSrchBtn{
 	height:30px;
 }
+#userModSearchField{
+	display:inline;
+	width:85%;
+	height:28px;
+}
+#userModSrchBtn{
+	height:30px;
+}
+#usrSrchRslts button{
+	float:right;
+}
 #userShowInfo h1{
 	display:inline;
 	vertical-align: bottom;
