@@ -35,15 +35,16 @@ class UsersController < ApplicationController
 	end
 
 	def search
-		
-		result = User.search('admin')
-		render :json => {result:result}
+		users = User.search(params[:user_name])	
+		# result = User.search(srchTrm)
+		render users
+		return ('hello')
 	end
 
 	def show
 		@user = current_user
 		@user_show = User.find (params[:id])
-		@users = User.all
+		@users = User.search(params[:user_name])
 		@sorted_posts = @user_show.posts.all.sort_by{|e| e[:created_at]}.reverse
 	end
 

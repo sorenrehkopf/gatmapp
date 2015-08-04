@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
 	if search
 	  where("user_name LIKE ?", "%#{search}%") 
 	else
-		scoped
+		return User.all
 	end
 end
 	

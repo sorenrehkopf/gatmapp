@@ -7,8 +7,7 @@
       </div>
       <div class="modal-body" id="usrSrchRslts">
         <% for user in @users %>
-        
-          <div class="user">
+          <div>
             <p>
              <%= cl_image_tag(user.picture, :width => 50, :height => 50, :crop => :fill) %>
              <strong><%=h user.user_name %></strong>

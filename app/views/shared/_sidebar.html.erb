@@ -7,7 +7,7 @@
 			<%= cl_image_tag(@user.picture, :width => 90, :height => 90, :crop => :fill) %>
 		</div>
 		<div id='userText'>
-			<a href="profile"><h4><%= @user.user_name %></h4></a>
+			<a href="/profile"><h4><%= @user.user_name %></h4></a>
 			<ul class="nav nav-pills">
 			  <li role="presentation"><%= link_to "Feed.", feed_path %></li>
 			  <li role="presentation"><%= link_to "Collection.", collection_path %></li>
