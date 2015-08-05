@@ -1,5 +1,9 @@
 class MainController < ApplicationController
 
+	# if @current_user
+	# 	redirect_to sessions_path
+	# end
+
 	def index
     @user = User.new
 	end

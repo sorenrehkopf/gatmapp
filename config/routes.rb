@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   get 'logout' => 'sessions#destroy'
   get 'feed' => 'sessions#feed'
+  # get 'logged_in' => 'sessions#index'
 
   get 'collection' => 'gifs#collection'
   get 'profile' => 'posts#profile'

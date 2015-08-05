@@ -4,6 +4,22 @@ $("#userSrchBtn").on('click',function(e){
 		e.preventDefault()
 	});
 
+$('.followProfBtn').on('click',function(e){
+		e.preventDefault();
+		var frndId=$(this).attr('frndId')
+		var btnTxt = $(this)
+		console.log(frndId)
+		$.ajax({
+			url:'/friendships',
+			method: 'POST',
+			data: {'friend_id': frndId}
+		}).done(function(e){
+			console.log('followed!')
+			btnTxt.html('Followed!');
+		});
+
+	});
+
 $(".profScroll").on('click','.show',function(e){
 	e.preventDefault()
 	var imgSrc = $(this).parent().attr('imgUrl');
