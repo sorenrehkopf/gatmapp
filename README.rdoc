@@ -1,28 +1,13 @@
-== README
+Gatmapp readme.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+hosted app:
+https://gatmapp.herokuapp.com/
 
-Things you may want to cover:
+wireframes:
+https://drive.google.com/folderview?id=0BwtiQqKaMnvjfkt4Xy1YeTYwYUQ5VWN1NUt2bEFzdmd1bjctdlFOWjh6dERZRnNINnNOaUE&usp=sharing
 
-* Ruby version
+Technologies:
+Ruby. JS. HTML5. CSS3. JQuery. Bootstrap. Giphy Public API.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Bugs:
+Many many. Biggest non functional feature is user search function does not work. Users own profile does not display in post date order.
