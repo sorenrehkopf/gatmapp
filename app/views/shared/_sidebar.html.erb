@@ -13,7 +13,11 @@
 			  <li role="presentation"><%= link_to "Collection.", collection_path %></li>
 			  <li role="presentation"><%= link_to "Search.", sessions_path %></li>
 			</ul>
+			<% if @current_user %>
 			<h6><%= link_to "Log-out.", logout_path %></h6>
+			<% else %>
+			<h6><%= link_to "Login / Sign-up.", root_path %></h6>
+			<% end %>
 		</div>	
 	</div>
 	<hr>

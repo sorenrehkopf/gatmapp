@@ -5,8 +5,12 @@ class GifsController < ApplicationController
  #  	end
 
 	def collection
+		if !@current_user
+			redirect_to root_path
+		else
 		@user = current_user
 		@users = User.all
+		end
 	end
 
 	def new

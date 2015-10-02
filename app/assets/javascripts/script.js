@@ -12,7 +12,7 @@ $("#userSrchBtn").on('click',function(e){
 		}).done(function(e){
 			console.log(rslt);
 			for(i=0;i<rslt.responseJSON.length;i++){
-			$('#usrSrchRslts').append("<div><p><img src='http://res.cloudinary.com/hx0wmncm4/image/upload/c_fill,h_40,w_40/"+rslt.responseJSON[i].pic+"'><strong>"+rslt.responseJSON[i].user_name+"</strong><button><a href='users/"+rslt.responseJSON[i].id+"'>Profile.</a></button><button class='followBtn' frndId='"+rslt.responseJSON[i].id+"'>Follow.</button><div class='clear'></div></p></div>");
+			$('#usrSrchRslts').append("<div><p><img src='http://res.cloudinary.com/hx0wmncm4/image/upload/c_fill,h_40,w_40/"+rslt.responseJSON[i].pic+"'><strong>"+rslt.responseJSON[i].user_name+"</strong><button class='btn btn-default'><a href='/users/"+rslt.responseJSON[i].id+"'>Profile.</a></button><button class='followBtn btn btn-default' frndId='"+rslt.responseJSON[i].id+"'>Follow.</button><div class='clear'></div></p></div>");
 			};
     	});
 	});
@@ -28,7 +28,7 @@ $("#userModSrchBtn").on('click',function(e){
 		}).done(function(e){
 			console.log(rslt);
 			for(i=0;i<rslt.responseJSON.length;i++){
-			$('#usrSrchRslts').append("<div><p><img src='http://res.cloudinary.com/hx0wmncm4/image/upload/c_fill,h_40,w_40/"+rslt.responseJSON[i].pic+"'><strong>"+rslt.responseJSON[i].user_name+"</strong><button><a href='users/"+rslt.responseJSON[i].id+"'>Profile.</a></button><button class='followBtn' frndId='"+rslt.responseJSON[i].id+"'>Follow.</button><div class='clear'></div></p></div>");
+			$('#usrSrchRslts').append("<div><p><img src='http://res.cloudinary.com/hx0wmncm4/image/upload/c_fill,h_40,w_40/"+rslt.responseJSON[i].pic+"'><strong>"+rslt.responseJSON[i].user_name+"</strong><button class='btn btn-default'><a href='/users/"+rslt.responseJSON[i].id+"'>Profile.</a></button><button class='followBtn btn btn-default' frndId='"+rslt.responseJSON[i].id+"'>Follow.</button><div class='clear'></div></p></div>");
 			};
     	});
 	});

@@ -86,11 +86,11 @@ body{
 	max-height:calc(100vh - 125px);
 }
 #resultsView::-webkit-scrollbar{
-	background-color: rgba(20,20,20,0);
+	background-color: rgba(200,200,200,0);
 	width:6px;
 }
 #resultsView::-webkit-scrollbar-thumb{
-	background-color: rgba(20,20,20,.4);
+	background-color: rgba(200,200,200,.4);
 	width:6px;
 }
 .imageDiv{

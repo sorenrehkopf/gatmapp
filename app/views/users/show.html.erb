@@ -5,7 +5,7 @@
 	<div id="userShowInfo">
 		<%= cl_image_tag(@user_show.picture, :width => 140, :height => 140, :crop => :fill) %>
 		<h1><%= @user_show.user_name %></h1>
-		<button class="followProfBtn" frndId="<%= @user_show.id %>">Follow.</button>
+		<button class="followProfBtn btn btn-default" frndId="<%= @user_show.id %>">Follow.</button>
 		<span class="notification"></span>
 		<hr>
 	</div>

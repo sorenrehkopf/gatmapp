@@ -43,7 +43,8 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = current_user
+		no_picture = Struct.new(:picture,:user_name,:friendships,:inverse_friends)
+		@user = current_user || no_picture.new('https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg','anonymous',[],[])
 		@user_show = User.find (params[:id])
 		
 		@sorted_posts = @user_show.posts.all.sort_by{|e| e[:created_at]}.reverse
